@@ -1,0 +1,22 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="plonetheme.cliente1">
+
+  <genericsetup:registerProfile
+      name="default"
+      title="Tema de cliente1"
+      directory="profiles/default"
+      description='Extension profile for the "Tema de cliente1" Plone theme.'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:importStep
+      name="plonetheme.cliente1.various"
+      title="Tema de cliente1: miscellaneous import steps"
+      description="Various import steps that are not handled by GS import/export handlers."
+      handler="plonetheme.cliente1.setuphandlers.setupVarious">
+    <depends name="skins"/>
+  </genericsetup:importStep>
+
+</configure>
